@@ -5,7 +5,7 @@ body{
     font-family: "GFS Neohellenic", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: x-large;
+    font-size: x-large; 
 }
 
 #container{
@@ -24,12 +24,12 @@ body{
     font-style: normal;
 }
 
-input[type="checkbox"] {
+input[type="checkbox"] { /*disattivare per il debug*/
     display: none;
-}
+} 
 
-#menutrigger{
-    ...
+#menutrigger:checked+#container #menu { 
+    transform: translateX(10%);
 }
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
@@ -80,7 +80,7 @@ input[type="checkbox"] {
 }
 
 #logo p{
-    font-size: large; /* il resto delle caratteristiche sono nel comparto 1*/
+    font-size: large; /* il resto delle caratteristiche sono nel comparto del Body*/ 
     margin: 0;
     padding: .5em;
     font-size: 1em;
@@ -136,10 +136,9 @@ input[type="checkbox"] {
     justify-content: space-between;
     padding: .5em;
     padding-bottom: 1em;
-    background-color: none;
     gap: 3em;
-    position: sticky; /* not working */
-    top: 7%;
+    position: sticky; 
+    top: 7%; /* per posizionare il position: sticky */
 }
 
 #menu ul{
@@ -157,11 +156,14 @@ input[type="checkbox"] {
     background: linear-gradient(to right, hsla(0, 0%, 12%, 1), hsla(0, 0%, 70%, 1));
     border-radius: 10px;
     transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* width: 100%;
+    padding: .25em; */
 }
 
 #menu ul a{
     width: 197px;
     height: 55px;
+    
     font-size: 1.10em;
     white-space: nowrap;
     display: flex;
@@ -297,10 +299,6 @@ input[type="checkbox"] {
     background-image: url();
 }
 
-/* #contents div:hover{
-    cursor: pointer;
-} */
-
 #contents a:hover div{
     filter: brightness(1.0);
     transition: all 0.4s ease;
@@ -325,6 +323,7 @@ input[type="checkbox"] {
 
 #footer p{
     margin: 0;
+    text-wrap: nowrap;
 }
 
 #footer #social{
@@ -343,7 +342,7 @@ input[type="checkbox"] {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap: 1.5em;
+    gap: 1.25em;
 }
 
 #footer ul li{
@@ -363,6 +362,7 @@ input[type="checkbox"] {
     align-items: center;
     align-content: center;
     gap: .25em;
+    text-wrap: nowrap;
 }
 
 #footer img{
@@ -385,7 +385,7 @@ input[type="checkbox"] {
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 450px) {
 
     #title label {
         display: none;
@@ -396,33 +396,59 @@ input[type="checkbox"] {
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 450px) {
+
+    body{
+        font-size: .70em;
+    }
+
+    /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
     #logo{
         width: 100%;
+        justify-content: center;
     }
 
     #logo h1{
-        font-size: 1.5em;
+        font-size: 2.6em;
+        padding: .3em;
     }
 
     #logo div{
-        height: 2em;
+        height: 2.8em;
     }
 
     #logo p{
-        font-size: initial; 
+        font-size: .92em;
     }
 
-
+    #title label{
+        padding: 1.25em;
+    }
 
     /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
     #menu{
+        height: calc(100vh - 52px - 12em );
+        width: 25%;
         background-color: lightgrey;
-        position: fixed;
-        transform: translateX(-110%);
+        border-radius: 10px;
+        position: fixed; /* Perché rimane in parte sticky? */
+        z-index: 1;
+        transform: translateX(-200%);
         transition: all 0.4s ease;
+        padding: 1.5em; 
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+
+    #menu ul a{
+        width: 100px;
+        height: 35px;
+    }
+
+    #menu #second{
+        font-size: .75em;
     }
 
     /*xxxxxxxxxxxxxxxxxxxxxxxxx*/
@@ -432,11 +458,20 @@ input[type="checkbox"] {
     }
 
     #contents a{
-        width: calc(100% / 2 - 1.5em);
+        width: calc((100% / 2 ) - 1.25em); /* Perché 1.25 e non 1.5em? perché conta anche il padding, non solo il gap */
     }
 
+    /* #contents a p{
+        font-size: .5em;
+    } */
+
     #contents #prima{
-        height: 260px;
+        height: 130px;
+        /* font-size: 1em; */
+    }
+
+    #contents #prima p{
+        font-size: .75em;
     }
 
     /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
