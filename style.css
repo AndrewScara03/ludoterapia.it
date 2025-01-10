@@ -505,7 +505,7 @@ input[type="checkbox"] { /*disattivare per il debug*/
     /* label nel comparto del Title */
 
     #link{
-        gap: .6em;
+        gap: .75em;
     }
 
     #link a img{

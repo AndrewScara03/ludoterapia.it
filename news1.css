@@ -235,25 +235,27 @@ input[type="checkbox"] { /*disattivare per il debug*/
 #contents{
     width: 100%;
     height: auto;
-    background-color: #d9d9d9;
-    color: black;
+    color: whitesmoke;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: flex-start;
-    padding: 1.5em;
-    margin: .5em;
-    position: relative;
+    padding-top: 1em;
+    padding-bottom: 1em;
     
 }
 
 #triggermenu{
-    padding: 1.25em;
+    width: 12.5%;
+    padding-left: 1em;
+    padding-right: 1em;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0;
-    padding-bottom: .5em;
+    justify-content: center;
+    position: sticky;
+    top: calc(108px + .5em);
+    transition: all 0.4s ease;
 }
 
 #triggermenu img{
@@ -268,14 +270,35 @@ input[type="checkbox"] { /*disattivare per il debug*/
 }
 
 #contenuti{
+    background-color: #d9d9d9;
+    color: black;
+    width: calc(75% - 2em); /* meno il padding dei triggermenu */
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
+    position: relative;
 }
 
 .principale{
-    width: 75%;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    background-image: url(astrobot.avif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.principale::after{
+    content: '';
+    position: absolute;
+    top: 67%;
+    left: 0;
+    width: 100%;
+    height: 33%;
+    background: linear-gradient(to bottom, transparent, #d9d9d9);
+    transition: all 0.4s ease;
 }
 
 #contents h1, h2{
@@ -426,7 +449,7 @@ input[type="checkbox"] { /*disattivare per il debug*/
     /* label nel comparto del Title */
 
     #link{
-        gap: .6em;
+        gap: .75em;
     }
 
     #link a img{
