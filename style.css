@@ -85,7 +85,7 @@ input[type="checkbox"] { /*disattivare per il debug*/
 #logo div{
     border-left: 2px solid white; 
     height: 3em; 
-    margin: 0 10px; 
+    margin: 0 10px;
     border-radius: 2px;
 }
 
