@@ -28,7 +28,9 @@ input[type="checkbox"] { /*disattivare per il debug*/
     display: none;
 } 
 
-/*menutrigger è nella media query della versione pc*/
+#menutrigger:checked+#container #menu { 
+    transform: translateX(10%);
+}
 
 #menutrigger:checked+#container #menublock { 
     opacity: 1;
@@ -83,7 +85,7 @@ input[type="checkbox"] { /*disattivare per il debug*/
 #logo div{
     border-left: 2px solid white; 
     height: 3em; 
-    margin: 0 10px; 
+    margin: 0 10px;
     border-radius: 2px;
 }
 
@@ -138,7 +140,6 @@ input[type="checkbox"] { /*disattivare per il debug*/
 #window{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
 }
 
 #menublock{
@@ -151,14 +152,14 @@ input[type="checkbox"] { /*disattivare per il debug*/
     z-index: -1;
     position: fixed;
     opacity: 0;
-    transition: all 0.4s ease;
+    transition: all 0.2s ease;
 }
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 #menu{
-    width: 14%;
-    height: calc(100vh - 118px - 65px - 1.5em);
+    width: 17%;
+    height: calc(100vh - 118.59px - 1.5em);
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -168,11 +169,7 @@ input[type="checkbox"] { /*disattivare per il debug*/
     gap: 3em;
     position: sticky; 
     /* top: 7%; */ /* per posizionare il position: sticky */
-    top: 185px;
-    transform: translateX(-100%);
-    position: fixed;
-    z-index: 2;
-    transition: all 0.4s ease;
+    top: 120px;
 }
 
 #menu ul{
@@ -197,7 +194,6 @@ input[type="checkbox"] { /*disattivare per il debug*/
 #menu ul a{
     width: 197px;
     height: 55px;
-
     
     font-size: 1.10em;
     white-space: nowrap;
@@ -215,7 +211,7 @@ input[type="checkbox"] { /*disattivare per il debug*/
 
 #menu ul li a img{
     left: 1.75em;
-    width: .5em;
+    width: .70em;
     position: relative;
 }
 
@@ -237,67 +233,102 @@ input[type="checkbox"] { /*disattivare per il debug*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 #contents{
-    width: 100%;
+    width: 78%;
     height: auto;
-    color: whitesmoke;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 1.5em;
+    padding: 1.5em;
+    position: relative;
 }
 
-#triggermenu{
-    width: 17%;
-    /* padding-left: .5em;
-    padding-right: .5em; */
-    padding: .5em;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    position: sticky;
-    /* top: calc(108px + .5em); */
-    top: 120px;
-    transition: all 0.4s ease;
-}
+#contents a{
+    line-height: 1.2;
+    color: #1f1f1f;
+    font-weight: 600; /*ver. 2.0*/
 
-#triggermenu img{
-    width: 1.5em;
-    height: 1.5em;
-}
-
-#triggermenu p{
-    margin: 0;
-    padding: .25em;
-    font-size: 1em;
-}
-
-#contenuti{
+    text-decoration: none;
     background-color: #d9d9d9;
-    color: black;
-    /* width: calc(75% - 2em); */ /* meno il padding dei triggermenu */
-    width: calc(100% - 17% - 24px);
+    /* width: calc(100% / 3 - 1.5em); */ /*ver. 1.0*/
+    width: calc(100% / 3 - 1em);
+    /* padding: .25em; */ /*ver. 1.0*/
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    position: relative;
+    flex-wrap: nowrap;
+    align-items: flex-start;
 }
 
-#principale{
+#contents a div{
+    background-color: #848484;
+    aspect-ratio: 9/16;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    position: relative;
-    background-image: url(astrobot.avif);
+    align-self: center;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    /* transition: all 0.2s ease;
+    filter: brightness(0.8); */ /*ver. 1.0*/
+
+    position: relative; /*ver. 2.0*/
 }
 
-#principale::after{
+#contents a p{
+    font-size: 30px;
+    padding-left: 12px;
+    margin: 0;
+}
+
+#contents a h3{
+    font-size: 24px;
+    padding-left: 12px;
+    padding-bottom: 10px;
+    margin: 0;
+    font-size: .70em;
+    font-weight: 400;
+    font-style: italic;
+}
+
+#uno{
+    background-image: url(); 
+}
+
+#due {
+    background-image: url();
+}
+
+#tre {
+    background-image: url();
+}
+
+#quattro {
+    background-image: url();
+}
+
+#cinque {
+    background-image: url();
+}
+
+#sei {
+    background-image: url();
+}
+
+#sette {
+    background-image: url();
+}
+
+#otto {
+    background-image: url();
+}
+
+#nove {
+    background-image: url();
+}
+
+.gradient::after{
     content: '';
     position: absolute;
     top: 67%;
@@ -308,116 +339,15 @@ input[type="checkbox"] { /*disattivare per il debug*/
     transition: all 0.4s ease;
 }
 
-#resto{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 5%;
-    padding-top: 0;
-    padding-bottom: 0;
-    gap: 1em;
+#contents a:hover .gradient::after{
+    height: 10%;
+    top: 90%;
 }
 
-#contents h1, h2, p{
-    margin: 0;
-}
-
-#contents h1{
-    font-size: 2em;
-    font-weight: 600;
-    text-align: left; /* non funziona */
-    line-height: 1.0;
-    gap: .5em;
-}
-
-#contents h2{
-    font-size: 1.25em;
-    font-weight: 500;
-}
-
-.separatore{
-    border-top: #000 1px solid;
-    width: 100%;
-    margin: 10px 0;
-    border-radius: 2px;
-}
-
-#contents p{
-    font-size: 20px;
-    font-weight: 400;
-    text-align: justify;
-}
-
-#resto img{
-    width: 33%;
-    /* height: min-content; */
-    object-fit: contain;
-}
-
-.paragrafodx{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: 1.5em;
-    padding-bottom: 1em;
-}
-
-.paragrafodxdx{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    gap: .5em;
-}
-
-#contents .paragrafodx h2{
-    font-weight: 600;
-    line-height: 1.0;
-    padding-left: .5em;
-    border-left: #000 3px solid;
-    border-radius: 2px;
-}
-
-.paragrafosx{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 1.5em;
-    padding-bottom: 1em;
-}
-
-.paragrafosxsx{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: flex-end;
-    gap: .5em;
-}
-
-#contents .paragrafosx h2{
-    font-weight: 600;
-    line-height: 1.0;
-    padding-right: .5em;
-    border-right: #000 3px solid;
-    border-radius: 2px;
-}
-
-.piuimg{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: .5em;
-}
-
-#resto .piuimg img{
-    width: 75%;
-}
+/* #contents a:hover div{
+    filter: brightness(1.0); 
+    transition: all 0.4s ease;
+} */ /*ver. 1.0*/
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
@@ -503,33 +433,13 @@ input[type="checkbox"] { /*disattivare per il debug*/
 
 @media screen and (min-width: 450px) {
 
-    #menutrigger:checked+#container #menu {
-        transform: translateX(0%);
-    }
-    
-    #menutrigger:hover+#container #menu {
-        transform: translateX(0%);
-    }
-    
-    #menu:hover { 
-        transform: translateX(0%);
-    }
-
-    #title label{
+    #title label {
         display: none;
     }
 
-    #menublock{
+    #window label {
         display: none;
     }
-
-    /* #menu{
-        display: none;
-    } */
-
-    /* #triggermenu{
-        display: none;
-    } */
 
 }
 
@@ -540,10 +450,6 @@ input[type="checkbox"] { /*disattivare per il debug*/
 
     body{
         font-size: .70em;
-    }
-
-    #menutrigger:checked+#container #menu { /* continuare da qua */
-        transform: translateX(10%);
     }
 
     /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
@@ -585,7 +491,6 @@ input[type="checkbox"] { /*disattivare per il debug*/
         background-color: lightgrey;
         border-radius: 10px;
         position: fixed; /* Perché rimane in parte sticky? */
-        top: 120px;
         z-index: 2;
         transform: translateX(-200%);
         transition: all 0.4s ease;
@@ -608,89 +513,44 @@ input[type="checkbox"] { /*disattivare per il debug*/
     #contents{
         width: 100%;
         /* padding-top: 0; */ /*ver. 1.0*/
-        justify-content: center;
-        padding: 0;
     }
 
-    #triggermenu{
-        display: none;
+    #contents a{
+        /* width: calc((100% / 2 ) - 1.25em); */ /*ver. 1.0*/
+        width: calc((100% / 2 ) - .75em);
     }
 
-    #contenuti{
-        width: 100%;
+    #contents a p{
+        font-size: 16px;
+        padding-left: 6px;
+        padding-right: 6px;
     }
 
-    #contents h1{
-        font-size: 40px;
-    }
-    
-    #contents h2{
-        font-size: 26px;
+    #contents a h3{
+        font-size: 12px;
+        padding-left: 6px;
+        padding-bottom: 4px;
     }
 
-    #contents p{
-        font-size: 17px;
-        hyphens: auto;
+    #contents #prima{
+        height: 140px;
     }
 
-    .paragrafodx{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 1.5em;
-        padding-bottom: 1em;
-    }
-
-    #resto .paragrafodx img{
-        width: 90%;
-    }
-
-    .paragrafosx{
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-
-    #resto .paragrafosx img{
-        width: 90%;
-    }
-
-    #contents .paragrafodx h2 {
-        border-left: #000 2px solid;
-    }
-
-    #contents .paragrafosx h2 {
-        border-right: #000 2px solid;
-        text-align: right;
-    }
-
-    .piuimg {
-        /* gap: 5em; */
-        flex-direction: row;
-    }
-
-    #resto .piuimg img{
-        width: 50%;
+    #contents #prima p{
+        font-size: .75em;
     }
 
     /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
     #footer{
         border-top: 1px solid white;
-        width: 100vw;
+        width: 90vw;
         font-size: 10px;
         gap: 1.5em;
-        /* padding-left: calc(5vw + 1em);
-        padding-right: calc(5vw + 1em); */
-        padding: 0;
     }
 
     #footer #social{
         align-items: flex-start;
-        padding-left: 2em;
-        padding-right: 2em;
-        padding-top: 1em;
     }
 
     #footer ul{
@@ -698,12 +558,6 @@ input[type="checkbox"] { /*disattivare per il debug*/
         flex-wrap: wrap;
         justify-content: flex-start;
         gap: .75em;
-    }
-
-    #footer #email{
-        padding-left: 2em;
-        padding-right: 2em;
-        padding-bottom: 1.5em;
     }
 }
 
@@ -726,27 +580,6 @@ input[type="checkbox"] { /*disattivare per il debug*/
 
     .gradient::after{
         background: linear-gradient(to bottom, transparent, #1f1f1f);
-    }
-
-    #contenuti{
-        background-color: rgb(31, 31, 31);
-        color: rgb(235, 235, 235);
-    }
-
-    #principale::after{
-        background: linear-gradient(to bottom, transparent, #1f1f1f);
-    }
-
-    .separatore{
-        border-top: #d9d9d9 1px solid;
-    }
-
-    #contents .paragrafodx h2 {
-        border-left: #d9d9d9 2px solid;
-    }
-
-    #contents .paragrafosx h2 {
-        border-right: #d9d9d9 2px solid;
     }
 
     #footer{
