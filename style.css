@@ -335,33 +335,33 @@ input[type="checkbox"] { /*disattivare per il debug*/
 }
 
 #quattro {
-    background-image: url();
+    background-image: url(gta6.webp);
 }
 
 #cinque {
-    background-image: url();
+    background-image: url(Donkey_Kong_Country_Returns_HD.webp);
 }
 
 #sei {
-    background-image: url();
+    background-image: url(ubisoft.webp);
 }
 
 #sette {
-    background-image: url();
+    background-image: url(resident-evil-4-remake.webp);
 }
 
 #otto {
-    background-image: url();
+    background-image: url(mgs-delta.webp);
 }
 
 #nove {
-    background-image: url();
+    background-image: url(Final_Fantasy_VI.webp);
 }
 
 .gradient::after{
     content: '';
     position: absolute;
-    top: 67%;
+    top: 67.5%;
     left: 0;
     width: 100%;
     height: 33%;
@@ -371,7 +371,7 @@ input[type="checkbox"] { /*disattivare per il debug*/
 
 #contents a:hover .gradient::after{
     height: 10%;
-    top: 90%;
+    top: 90.5%;
 }
 
 /* #contents a:hover div{
